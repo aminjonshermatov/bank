@@ -4,6 +4,8 @@ type Money int64
 
 type Currency string
 
+type Category string
+
 const (
 	TJS Currency = "TJS"
 	USD Currency = "USD"
@@ -13,12 +15,19 @@ const (
 
 type PAN string
 
+type Payment struct {
+	ID 			int
+	Amount 		Money
+	Category	Category
+}
+
 type Card struct {
-	ID      int
-	PAN      PAN
-	Balance    Money
-	Currency  Currency
-	Color    string
-	Name    string
-	Active    bool
+	ID			int
+	PAN			PAN
+	Balance		Money
+	Currency	Currency
+	Color		string
+	Name		string
+	Active		bool
+	MinBalance 	Money
 }
